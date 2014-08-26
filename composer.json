@@ -3,6 +3,6 @@
   "description": "White makes accepting online payments in the Middle East a piece of cake",
   "require": {
     "php": ">=5.3.0",
-    "guzzlehttp/guzzle": "~4.0",
+    "guzzlehttp/guzzle": "~4.0"
   }
 }
