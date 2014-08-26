@@ -1,6 +1,6 @@
 # White PHP
 
-White makes accepting payments in the Middle East ridiculously easy. Sign up for an account at [http://whitepayments.com](whitepayments.com).
+White makes accepting payments in the Middle East ridiculously easy. Sign up for an account at [whitepayments.com](http://whitepayments.com).
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ Now, running `php composer.phar install` will pull the library directly to your 
 
 ## Using White
 
-You'll need an account with White if you don't already have one (grab one real quick at [http://whitepayments.com](whitepayments.com) and come back .. we'll wait).
+You'll need an account with White if you don't already have one (grab one real quick at [whitepayments.com](http://whitepayments.com) and come back .. we'll wait).
 
 Got an account? Great .. let's get busy.
 
