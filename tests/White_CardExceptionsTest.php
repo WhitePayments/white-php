@@ -142,7 +142,7 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
       "card" => array(
         "number" => "4242424242424242",
         "exp_month" => 15,
-        "exp_year" => 2100,
+        "exp_year" => 2015,
         "cvv" => "123"
       ),
       "description" => "Charge for test@example.com"
