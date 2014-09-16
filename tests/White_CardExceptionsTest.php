@@ -29,6 +29,27 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
     }
   }
 
+  function testInvalidCard()
+  {
+    $data = array(
+      "amount" => 10.500,
+      "currency" => "bhd",
+      "card" => array(
+        "number" => "4141414141414141",
+        "exp_month" => 12,
+        "exp_year" => 2014,
+        "cvv" => "123"
+      ),
+      "description" => "Test invalid card"
+    );
+
+    try{
+      $result = White_Charge::create($data);
+    } catch (White_Error_Card $e) {
+      $this->assertEquals('invalid_card', $e->getErrorCode());
+    }
+  }
+
   function testInvalidCVC()
   {
     $data = array(

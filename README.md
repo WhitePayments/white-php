@@ -66,18 +66,12 @@ Any errors that may occur during a transaction is raised as an Exception. Here's
 ```php
 try {
   // Use White's bindings...
-} catch(White_CardError $e) {
-  // Since it's a decline, White_CardError will be caught
-  $body = $e->getJsonBody();
-  $err  = $body['error'];
-
+} catch(White_Error_Card $e) {
+  // Since it's a decline, White_Error_Card will be caught
   print('Status is:' . $e->getHttpStatus() . "\n");
-  print('Type is:' . $err['type'] . "\n");
-  print('Code is:' . $err['code'] . "\n");
-  // param is '' in this case
-  print('Param is:' . $err['param'] . "\n");
-  print('Message is:' . $err['message'] . "\n");
-} catch (White_InvalidRequestError $e) {
+  print('Code is:' . $e->getErrorCode() . "\n");
+  print('Message is:' . $e->getMessage() . "\n");
+} catch (White_Error_Parameters $e) {
   // Invalid parameters were supplied to White's API
 } catch (White_Error $e) {
   // Display a very generic error to the user, and maybe send
