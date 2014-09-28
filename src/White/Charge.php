@@ -24,18 +24,17 @@ class White_Charge
   {
     $url = White::getEndPoint('charge');
 
-    $client = new GuzzleHttp\Client();
-    try {
-      $response = $client->post($url, array(
-        'auth' =>  array(White::getApiKey(), ''),
-        'body' => $data,
-      ));
-      $result = $response->json();
-    } catch (\GuzzleHttp\Exception\TransferException $e) { //catch all Guzzle exceptions
-      White::handleErrors($e);
-    } catch(\Exception $e) { //Rethrow any other errors
-      throw $e;
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_USERPWD, White::getApiKey() . ':');
+    curl_setopt($ch,CURLOPT_POST, true);
+    curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = json_decode(curl_exec($ch), true);
+    if(curl_errno($ch)){
+      throw new Exception(curl_error($ch));
     }
+    curl_close($ch);
 
     return $result;
   }
@@ -53,17 +52,15 @@ class White_Charge
   {
     $url = White::getEndPoint('charge_list');
 
-    $client = new GuzzleHttp\Client();
-    try {
-      $response = $client->get($url, array(
-        'auth' =>  array(White::getApiKey(), '')
-      ));
-      $result = $response->json();
-    } catch (\GuzzleHttp\Exception\TransferException $e) { //catch all Guzzle exceptions
-      White::handleErrors($e);
-    } catch(\Exception $e) { //Rethrow any other errors
-      throw $e;
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_USERPWD, White::getApiKey() . ':');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $result = json_decode(curl_exec($ch), true);
+    if(curl_errno($ch)){
+      throw new Exception(curl_error($ch));
     }
+    curl_close($ch);
 
     return $result;
   }
