@@ -72,11 +72,8 @@ class White
     return self::$baseURL . self::$endpoints[$name];
   }
 
-  public static function handleErrors(\Exception $e)
-  {
-      $code = $e->getResponse()->getStatusCode();
-      $result = $e->getResponse()->json();
-      
+  public static function handleErrors($result, $code)
+  {   
       if($code == White_Error_Card::$CODE && $result['error']['type'] == White_Error_Card::$TYPE) {
         throw new White_Error_Card($result['error']['message'], $result['error']['code']);
       }

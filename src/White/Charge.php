@@ -31,8 +31,16 @@ class White_Charge
     curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($data));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = json_decode(curl_exec($ch), true);
-    if(curl_errno($ch)){
+
+    // Check for errors and such.
+    $info = curl_getinfo($ch);
+    $errno = curl_errno($ch);
+    if( $result === false || $errno != 0 ) {
+      // Do error checking
       throw new Exception(curl_error($ch));
+    } else if($info['http_code'] != 200) {
+      // Got a non-200 error code.
+      White::handleErrors($result, $info['http_code']);
     }
     curl_close($ch);
 
@@ -57,8 +65,16 @@ class White_Charge
     curl_setopt($ch, CURLOPT_USERPWD, White::getApiKey() . ':');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = json_decode(curl_exec($ch), true);
-    if(curl_errno($ch)){
+    
+    // Check for errors and such.
+    $info = curl_getinfo($ch);
+    $errno = curl_errno($ch);
+    if( $result === false || $errno != 0 ) {
+      // Do error checking
       throw new Exception(curl_error($ch));
+    } else if($info['http_code'] != 200) {
+      // Got a non-200 error code.
+      White::handleErrors($result, $info['http_code']);
     }
     curl_close($ch);
 
