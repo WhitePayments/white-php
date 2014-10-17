@@ -89,6 +89,6 @@ It's probably a good idea to run the unit tests to make sure that everything is 
 php vendor/bin/phpunit tests --bootstrap vendor/autoload.php
 ```
 
-## Cotributing (<-- Start by fixing this typo!)
+## Contributing
 
 Read our [Contributing Guidelines](CONTRIBUTING.md) for details
