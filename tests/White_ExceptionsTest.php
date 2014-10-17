@@ -35,7 +35,7 @@ class White_ExceptionsTest extends \PHPUnit_Framework_TestCase
   }
 
   /**
-  * @expectedException White_Error_Card
+  * @expectedException White_Error_Parameters
   */
   function testCardException()
   {

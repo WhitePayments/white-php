@@ -45,8 +45,8 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
 
     try{
       $result = White_Charge::create($data);
-    } catch (White_Error_Card $e) {
-      $this->assertEquals('invalid_card', $e->getErrorCode());
+    } catch (White_Error_Parameters $e) {
+      $this->assertTrue(true);
     }
   }
 
@@ -129,8 +129,8 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
 
     try{
       $result = White_Charge::create($data);
-    } catch (White_Error_Card $e) {
-      $this->assertEquals('invalid_card', $e->getErrorCode());
+    } catch (White_Error_Parameters $e) {
+      $this->assertTrue(true);
     }
   }
 
