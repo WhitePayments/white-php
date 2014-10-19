@@ -64,10 +64,10 @@ class White_ExceptionsTest extends \PHPUnit_Framework_TestCase
     White::setApiKey('sk_test_1234567890abcdefghijklmnopq');
 
     $data = array(
-      "amount" => 10.500,
+      "amount" => -1.30,
       "currency" => "bhd",
       "card" => array(
-        "number" => "1",
+        "number" => "4242424242424242",
         "exp_month" => 12,
         "exp_year" => 2014,
         "cvv" => "123"
