@@ -28,8 +28,10 @@ class White
   * @var array
   */
   protected static $endpoints = array(
-    'charge' => '/v1/charges',
-    'charge_list' => '/v1/charges'
+    'charge'        => '/v1/charges',
+    'charge_list'   => '/v1/charges',
+    'customer'      => '/v1/customers',
+    'customer_list' => '/v1/customers'
   );
 
   /**
