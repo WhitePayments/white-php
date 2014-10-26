@@ -40,4 +40,6 @@ class White_CustomerTest extends \PHPUnit_Framework_TestCase
 
     $this->assertEquals(array_keys($expected), array_keys($result));
   }
+
+  // TODO: These tests are really shallow .. beef them up!
 }
