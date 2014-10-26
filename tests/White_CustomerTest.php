@@ -6,6 +6,17 @@ class White_CustomerTest extends \PHPUnit_Framework_TestCase
   function setUp()
   {
     White::setApiKey('sk_test_1234567890abcdefghijklmnopq');
+
+    // Data for a successful customer
+    $this->success_data = array(
+      "description" => "Test Customer",
+      "card" => array(
+        "number" => "4242424242424242",
+        "exp_month" => 11,
+        "exp_year" => 2015,
+        "cvv" => "123"
+      )
+    );
   }
 
   function testList()
@@ -16,17 +27,7 @@ class White_CustomerTest extends \PHPUnit_Framework_TestCase
 
   function testCreateSuccess()
   {
-    $data = array(
-      "description" => "Test Customer",
-      "card" => array(
-        "number" => "4242424242424242",
-        "exp_month" => 11,
-        "exp_year" => 2014,
-        "cvv" => "123"
-      )
-    );
-
-    $result = White_Customer::create($data);
+    $result = White_Customer::create($this->success_data);
 
     $expected = array(
       "tag" => "cus_9042e13a6f1c82c50ef179afbece5a9f",
@@ -39,6 +40,12 @@ class White_CustomerTest extends \PHPUnit_Framework_TestCase
     );
 
     $this->assertEquals(array_keys($expected), array_keys($result));
+  }
+
+  function testRetrieveCustomerId()
+  {
+    $result = White_Customer::create($this->success_data);
+    $this->assertArrayHasKey('tag', $result);
   }
 
   // TODO: These tests are really shallow .. beef them up!

@@ -89,7 +89,7 @@ It's probably a good idea to run the unit tests to make sure that everything is 
 php vendor/bin/phpunit tests --bootstrap vendor/autoload.php
 ```
 
-Note: you'll need to pull the development dependencies as well, using `composer install --dev` in order to run the test suites.
+**Note:** you'll need to pull the development dependencies as well, using `composer update --dev` in order to run the test suites.
 
 ## Contributing
 
