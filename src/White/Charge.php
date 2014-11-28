@@ -2,7 +2,7 @@
 /**
  * Handle White API Charges
  * 
- * @author Sebastian Choren <schoren@rockingsoft.com>
+ * @author Yazin <yazin@whitepayments.com>
  * @link https://whitepayments.com/docs/
  * @license http://opensource.org/licenses/MIT
  */
