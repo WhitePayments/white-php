@@ -14,7 +14,7 @@ class White_CustomerTest extends \PHPUnit_Framework_TestCase
         "number" => "4242424242424242",
         "exp_month" => 11,
         "exp_year" => 2015,
-        "cvv" => "123"
+        "cvc" => "123"
       )
     );
   }
@@ -32,7 +32,7 @@ class White_CustomerTest extends \PHPUnit_Framework_TestCase
     $expected = array(
       "tag" => "cus_9042e13a6f1c82c50ef179afbece5a9f",
       "email" => null,
-      "live_mode" => false,
+      "livemode" => false,
       "account_balance" => null,
       "currency" => null,
       "description" => "My first customer",

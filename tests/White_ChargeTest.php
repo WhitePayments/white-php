@@ -23,7 +23,7 @@ class White_ChargeTest extends \PHPUnit_Framework_TestCase
         "number" => "4242424242424242",
         "exp_month" => 11,
         "exp_year" => 2014,
-        "cvv" => "123"
+        "cvc" => "123"
       ),
       "description" => "Charge for test@example.com"
     );
@@ -32,7 +32,7 @@ class White_ChargeTest extends \PHPUnit_Framework_TestCase
 
     $expected = array(
       "tag" => "ch_3c513b0dfdc110b11b4091e2cbf6dc23",
-      "is_live" => true,
+      "livemode" => true,
       "amount" => "0.1",
       "is_captured" => true,
       "currency" => "bhd",
