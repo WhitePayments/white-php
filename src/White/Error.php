@@ -3,7 +3,7 @@
 /**
  * Generic White error
  * 
- * @author Sebastian Choren <schoren@rockingsoft.com>
+ * @author Yazin Alirhayim <yazin@whitepayments.com>
  * @link https://whitepayments.com/docs/
  * @license http://opensource.org/licenses/MIT
  */
