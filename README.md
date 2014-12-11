@@ -6,7 +6,7 @@ White makes accepting payments in the Middle East ridiculously easy. Sign up for
 
 Using White with your PHP project is simple. 
 
-If you're using [Composer](https://getcomposer.org) (and really, who isn't these days amirite?), you can simply run:
+If you're using [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) (and really, who isn't these days amirite?), you can simply run:
 
 ```bash
 php composer.phar require white/white
