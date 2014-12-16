@@ -34,6 +34,13 @@ class White
     'customer_list' => '/v1/customers'
   );
 
+  /*
+  * Path to the CA Certificates required when making CURL calls
+  */
+  public static function getCaPath() {
+    return __DIR__ . '/data/ca-certificates.crt';
+  }
+
   /**
   * sets API Key
   * 
