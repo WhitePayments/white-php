@@ -4,7 +4,15 @@ White makes accepting payments in the Middle East ridiculously easy. Sign up for
 
 ## Getting Started
 
-Using White with your PHP project is simple. If you're using [Composer](https://getcomposer.org) (and really, who isn't these days amirite?), you just need to add one line to your `composer.json` file:
+Using White with your PHP project is simple. 
+
+If you're using [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) (and really, who isn't these days amirite?), you can simply run:
+
+```bash
+php composer.phar require white/white
+```
+
+.. or add a line to your `composer.json` file:
 
 ```json
 {
@@ -15,6 +23,8 @@ Using White with your PHP project is simple. If you're using [Composer](https://
 ```
 
 Now, running `php composer.phar install` will pull the library directly to your local `vendor` folder.
+
+**Note:** If you're running on a shared host, then you may need to set the `allow_url_fopen` flag for the `php` commands. For the install command, for example, this would look like `php -d allow_url_fopen=On composer.phar install`. The `-d` overrides the `php.ini` settings, where `allow_url_fopen` is usually set to `Off`.
 
 ## Using White
 
