@@ -39,7 +39,7 @@ class White_Charge
     if( $result === false || $errno != 0 ) {
       // Do error checking
       throw new Exception(curl_error($ch));
-    } else if($info['http_code'] != 200) {
+    } else if($info['http_code'] < 200 || $info['http_code'] > 299) {
       // Got a non-200 error code.
       White::handleErrors($result, $info['http_code']);
     }
