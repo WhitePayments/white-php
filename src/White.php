@@ -28,9 +28,9 @@ class White
   * @var array
   */
   protected static $endpoints = array(
-    'charge'        => 'charges',
-    'charge_list'   => 'charges',
-    'refunds'       => 'refunds'
+    'charge'        => 'charges/',
+    'charge_list'   => 'charges/',
+    'refunds'       => 'refunds/'
   );
 
   /*
@@ -84,19 +84,19 @@ class White
   {
     switch($result['error']['type']) {
       case White_Error_Authentication::$TYPE:
-        throw new White_Error_Authentication($result['error']['message'], $result['error']['code']);
+        throw new White_Error_Authentication($result['error']['message'], $result['error']['code'], $httpStatusCode);
         break;
 
       case White_Error_Banking::$TYPE:
-        throw new White_Error_Banking($result['error']['message'], $result['error']['code']);
+        throw new White_Error_Banking($result['error']['message'], $result['error']['code'], $httpStatusCode);
         break;
 
       case White_Error_Processing::$TYPE:
-        throw new White_Error_Processing($result['error']['message'], $result['error']['code']);
+        throw new White_Error_Processing($result['error']['message'], $result['error']['code'], $httpStatusCode);
         break;
 
       case White_Error_Request::$TYPE:
-        throw new White_Error_Request($result['error']['message'], $result['error']['code']);
+        throw new White_Error_Request($result['error']['message'], $result['error']['code'], $httpStatusCode);
         break;
     }
 

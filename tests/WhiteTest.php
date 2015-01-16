@@ -12,12 +12,12 @@ class WhiteTest extends \PHPUnit_Framework_TestCase
 
   function testSimpleMethods()
   {
-    $this->assertEquals('https://api.whitepayments.com', White::getBaseURL());
+    $this->assertEquals('https://api.whitepayments.com/', White::getBaseURL());
   }
 
   function testEndPoints()
   {
-    $this->assertEquals('https://api.whitepayments.com/charges', White::getEndPoint('charge'));
-    $this->assertEquals('https://api.whitepayments.com/charges', White::getEndPoint('charge_list'));
+    $this->assertEquals('https://api.whitepayments.com/charges/', White::getEndPoint('charge'));
+    $this->assertEquals('https://api.whitepayments.com/charges/', White::getEndPoint('charge_list'));
   }
 }
