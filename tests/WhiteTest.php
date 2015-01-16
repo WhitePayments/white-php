@@ -5,7 +5,7 @@ class WhiteTest extends \PHPUnit_Framework_TestCase
 {
   function testApiKey()
   {
-    $testKey = 'sk_test_1234567890abcdefghijklmnopq';
+    $testKey = 'test_sec_k_25dd497d7e657bb761ad6';
     White::setApiKey($testKey);
     $this->assertEquals($testKey, White::getApiKey());
   }
@@ -17,7 +17,7 @@ class WhiteTest extends \PHPUnit_Framework_TestCase
 
   function testEndPoints()
   {
-    $this->assertEquals('https://api.whitepayments.com/v1/charges', White::getEndPoint('charge'));
-    $this->assertEquals('https://api.whitepayments.com/v1/charges', White::getEndPoint('charge_list'));
+    $this->assertEquals('https://api.whitepayments.com/charges', White::getEndPoint('charge'));
+    $this->assertEquals('https://api.whitepayments.com/charges', White::getEndPoint('charge_list'));
   }
 }
