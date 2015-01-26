@@ -30,7 +30,9 @@ class White
   protected static $endpoints = array(
     'charge'        => 'charges/',
     'charge_list'   => 'charges/',
-    'refunds'       => 'refunds/'
+    'customer'      => 'customers/',
+    'customer_list' => 'customers/',
+    'refund'        => 'refunds/'
   );
 
   /*
