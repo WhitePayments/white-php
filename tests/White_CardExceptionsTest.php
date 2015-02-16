@@ -13,6 +13,7 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
     $data = array(
       "amount" => 1050,
       "currency" => "usd",
+      "email" => "ahmed@example.com",
       "card" => array(
         "number" => "4000000000000002",
         "exp_month" => 11,

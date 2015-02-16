@@ -19,6 +19,7 @@ class White_ChargeTest extends \PHPUnit_Framework_TestCase
     $data = array(
       "amount" => 1050,
       "currency" => "usd",
+      "email" => "ahmed@example.com",
       "card" => array(
         "number" => "4242424242424242",
         "exp_month" => 11,
@@ -33,20 +34,24 @@ class White_ChargeTest extends \PHPUnit_Framework_TestCase
     $expected = array(
       "id" => "ch_3c513b0dfdc110b11b4091e2cbf6dc23",
       "amount" => "1050",
-      'currency' => "usd",
-      'description' => "Charge for test@example.com",
-      'state' => "captured",
-      'captured_amount' => 1050,
-      'refunded_amount' => 0,
-      'failure_reason' => '',
-      'failure_code' => '',
+      "currency" => "usd",
+      "description" => "Charge for test@example.com",
+      "state" => "captured",
+      "email" => "ahmed@example.com",
+      "ip" => "",
+      "statement_descriptor" => "",
+      "account_id" => "acc_xxx",
+      "captured_amount" => 1050,
+      "refunded_amount" => 0,
+      "failure_reason" => "",
+      "failure_code" => "",
       "created_at" => "2014-08-14T16:20:53.451+03:00",
       "updated_at" => "2014-08-14T16:20:53.451+03:00",
-      'object' => "charge",
-      'card' => array()
+      "object" => "charge",
+      "card" => array()
     );
 
-    $this->assertEquals(array_keys($expected), array_keys($result));
+    $this->assertEquals(sort(array_keys($expected)), sort(array_keys($result)));
     $this->assertNull($result['failure_code']);
   }
 }
