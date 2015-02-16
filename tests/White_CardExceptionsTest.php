@@ -19,6 +19,7 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
         "exp_year" => 2016,
         "cvc" => "123"
       ),
+      "email" => "white+php+test@example.com",
       "description" => "Charge for test@example.com"
     );
 
@@ -40,6 +41,7 @@ class White_CardExceptionsTest extends \PHPUnit_Framework_TestCase
         "exp_year" => 2016,
         "cvc" => "123"
       ),
+      "email" => "white+php+test@example.com",
       "description" => "Charge to test@example.com"
     );
 
