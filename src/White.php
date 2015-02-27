@@ -39,7 +39,7 @@ class White
   * Path to the CA Certificates required when making CURL calls
   */
   public static function getCaPath() {
-    return __DIR__ . '/data/ca-certificates.crt';
+    return realpath(dirname(__FILE__)) . '/data/ca-certificates.crt';
   }
 
   /**
